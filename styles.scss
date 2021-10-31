@@ -1,0 +1,865 @@
+/* MES VARIABLES */ 
+$violet : #9356DC;
+$rose : #FF79DA;
+$vert: #99E2D0;
+$noir: black;
+$blanc: white;
+$grisclair:  #f5f8f7; 
+$policeshrikhand: 'Shrikhand', cursive;
+$policeroboto: 'Roboto', sans-serif;
+$paddingTopSection: 40px;
+$paddingBottomSection: 70px;
+$ombre: 1px 18px 15px -9px rgba(0,0,0,0.56);
+$paddingLeftDuTexteSousPhotoRestaurant : 20px;
+
+/* VARIABLES HEADER */ 
+$HeaderConteneurLogoDisplay : flex;
+$HeaderConteneurLogoJustifyContent : center;
+$HeaderConteneurLogoPaddingTop : 20px;
+$HeaderConteneurLogoPaddingBottom : 20px;
+$HeaderConteneurLogoWidth : 100%;
+$HeaderImgWidth : 50%;
+
+/* VARIABLES FOOTER */
+$FooterBackgroundColor : $noir;
+$FooterColor : $blanc;
+$FooterBlocPadding : 30px;
+$Footerh4FontFamily : $policeshrikhand;
+$Footerh4FontWeight : bold;
+$Footerh4MarginBlockStart : 0em;
+$FooterFasFoat : left;
+$FooterTexteMarginLeft: 30px;
+$FooterATextDecoration: none;
+$FooterAColor : $blanc; 
+
+/* VARIABLES PAGES DE MENU */ 
+
+
+ 
+/* POLICES */
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+ *{font-family: $policeshrikhand}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+ *{font-family: $policeroboto;}
+
+    body{
+        margin: 0;
+              
+    }
+
+    .encart{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    background: #727272c2;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+    animation: 1s 3s 1 both oterencart;
+     
+    }
+    
+
+    @keyframes animencart {
+        from {opacity: 1;}
+        to {opacity: 0;}        
+    }
+
+    @keyframes oterencart {
+        from {width: 100%; opacity: 1}
+        to {width: 0; opacity: 0;}
+        
+    }
+
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        animation: 3s 0s 1 both oterloader;                     
+      }
+      @keyframes oterloader {
+        from{opacity: 1;}
+        to{opacity: 0;}
+        
+    }
+
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        border-color: black transparent black transparent;
+        animation: lds-dual-ring 1s linear infinite;        
+        position: fixed;
+        justify-content: center;
+        
+
+        
+      }
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      
+    
+    /* HEADER */
+    #headerconteneurlogo{
+        display: $HeaderConteneurLogoDisplay;
+        justify-content: $HeaderConteneurLogoJustifyContent;
+        padding-top : $HeaderConteneurLogoPaddingTop;
+        padding-bottom: $HeaderConteneurLogoPaddingBottom;
+        width: $HeaderConteneurLogoWidth;
+        
+        img {
+            width: $HeaderImgWidth;
+            @media screen and (min-width :375px){
+                max-width: 300px;
+                
+            }           
+        }
+    }
+    
+  
+    /* SECTION RECHERCHE */
+
+    #recherche{
+        background-color: $grisclair;
+        padding-bottom: $paddingBottomSection;
+
+        #recherche__lignerecherche{
+            display: flex;
+            background-color: #f2f2f2;
+            height: auto;
+            justify-content: center;
+
+            #conteneuriconmap{
+                display: flex;
+                margin-right: 15px;
+                align-items: center;
+
+                    #iconmap{
+                        font-size: 20px;
+                        width: 100%;
+                        margin-left: 75px; 
+                    }
+            }
+    
+            #conteneurchampsrecherche{
+                display: flex;
+                justify-content: center; 
+           
+                #champsrecherche{
+                    height: 50px;
+                    border: none;
+                    background-color:#f2f2f2;
+                    font-size : 18px;
+                    font-weight: bold;
+                    
+                               
+                }
+            
+            }
+            
+        } 
+           
+            
+        h1{
+            font-size: 30px;
+            text-align: center;
+            font-family: $policeroboto;
+            font-weight: bold;
+            
+        }
+    
+        p{
+            font-size: 25px;
+            text-align: center;
+        }
+    
+        #recherche__conteneurboutonexplorer{
+            display: flex;
+            justify-content: center;
+            
+                   
+           
+                #boutonexplorer{                    
+                    color: white;
+                    border-radius: 40px;
+                    font-size: 18px;
+                    padding: 20px;
+                    background: rgb(255,121,218);
+                    background: linear-gradient(180deg, rgba(255,121,218,1) 20%, rgba(147,86,220,1) 100%);
+                    border: none;
+                    box-shadow: $ombre;
+                    transition: 2s; 
+                    
+                    &:hover{                
+                        background: linear-gradient(180deg, #ff79da94 20%, #9356dc9e 100%);
+                        box-shadow: 1px 18px 15px -9px rgb(0, 0, 0.9);
+                    }                                                       
+                }
+                 
+               
+                
+        }
+          
+        
+        
+        
+    }
+    
+
+    /* SECTION FONCTIONNEMENT */
+
+    #fonctionnement{
+        padding-top: $paddingTopSection;
+        padding-bottom: $paddingBottomSection;
+
+        h2{
+            margin-left: 10px;
+        }
+
+
+        .ensemble__fonctionnement__boutons{
+          
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                
+          
+            
+        }  
+
+            .fonctionnement__boutons{
+                display: flex;     
+                margin: 30px;
+                border-radius: 20px;
+                padding: 25px;
+                justify-content: center;
+                font-size: 15px;
+                font-weight: bold;
+                background-color: $grisclair;               
+                border: none;
+                box-shadow: $ombre;
+                text-decoration: none;
+                width: 100%;
+                transition : 0.5s;
+
+
+                @media screen and (min-width :375px){
+                    flex-wrap: nowrap;                   
+                    
+                }
+                
+                @media screen and (min-width :1200px){
+                    width: calc(33% - 110px);                   
+                    
+                }
+               
+                
+                &:hover{
+                    box-shadow: 1px 18px 15px -9px rgb(0, 0, 0);
+                    background-color: rgb(255, 255, 255);
+                    
+                }
+                @keyframes éclaircissement {
+                   from {opacity: 1;} 
+                   to {opacity: 0.5;}                    
+                }               
+                             
+                
+                    a{
+                        display: flex;
+                        text-decoration: none;
+                        width: 100%;
+                                                                     
+                      
+                        .num{
+                            display: flex;
+                            border-radius: 50%;
+                            color:$blanc ;
+                            background-color: $violet;
+                            padding: 10px;
+                            align-items: center;
+                            height: 10px;
+                            width: 10px;
+                            margin-left: -39px;                                
+                            
+                        }
+        
+                        .fas{
+                            font-size: 20px;
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            color: grey;
+                        
+                        }
+        
+                        .bouton{
+                            border: none;
+                            font-weight: bold;
+                            font-size: 16px;
+                            background: transparent;
+                            color: black;
+                            display: flex;
+                            align-items: center;
+                           
+                        }
+                        
+
+                    }
+                    
+
+                
+
+               
+            }
+            
+
+    
+    }
+
+    /* SECTION RESTAURANT */
+
+    #restaurant{
+        
+        background-color: $grisclair;
+        padding-top: $paddingTopSection;
+        padding-bottom: $paddingBottomSection;
+        
+
+        h2{
+            margin-left: 10px;
+        }
+
+        .ensemble__restaurant__carte{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        
+        }
+
+       .restaurant__carte{
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: $blanc;
+        margin-top: 30px;        
+        box-shadow: $ombre;
+        margin: 20px;
+        position: relative;
+        @media only screen and (max-width:700px){
+            width: 100%;
+        }
+
+        @media only screen and (min-width :700px){
+            width: 44%;
+        }
+
+        .badge{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 7px;
+                padding-top: 7px;
+                padding-right: 7px;
+                padding-bottom: 7px;
+                padding-left: 7px;
+            border-radius: 5px;
+            background: $vert;
+            color: #174609;
+        }
+
+            a{
+                text-decoration: none;
+                color: $noir;
+
+      
+                .restaurant__carte__photo{
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 20px 20px 0 0;
+                    object-fit: cover;
+                    
+                }
+
+                h3{
+                    margin-bottom: 0;
+                    padding-left: $paddingLeftDuTexteSousPhotoRestaurant;                
+                }
+
+                .paragrapheetlogo{
+                    display: flex;
+
+                        p{
+                        margin-top: 0;
+                        width: 90%;
+                        padding-left: $paddingLeftDuTexteSousPhotoRestaurant;            
+                        }
+
+                    .conteneurcoeur{
+                        display: flex;
+                        width: 10%;
+                        justify-items: center;
+                        
+                        &:hover{
+                            .far{
+                                opacity: 0;
+                                
+                            }
+                            
+                            .fas{
+                                opacity: 1;
+                                transition: 2s; 
+                            }                          
+                            
+                        }
+                        
+
+                        .far{
+                            width: 30px;
+                            font-size: 20px;
+                            position: absolute;
+                            opacity: 1;                            
+                        }
+
+                        .fas{
+                            width: 30px;
+                            font-size: 20px;
+                            position: absolute;
+                            opacity: 0;
+                            color: $violet;
+                            background: linear-gradient(180deg, rgba(147,86,220,1) 20%, rgba(255,121,218,1) 80%);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;                               
+                           
+                        }
+                        
+                    }
+            
+                }
+
+            }
+
+            
+        }
+
+    }
+
+    
+    
+
+    /* FOOTER */
+
+    footer{
+        background-color: $FooterBackgroundColor;
+        color: $FooterColor;
+
+        .footer__bloc{
+            padding: $FooterBlocPadding;
+            
+                h4{
+                font-family: $Footerh4FontFamily;
+                font-weight: $Footerh4FontWeight;
+                margin-block-start: $Footerh4MarginBlockStart;
+            }
+
+            .fas{
+                float: $FooterFasFoat;
+            }
+
+            .texte{
+                margin-left: $FooterTexteMarginLeft;
+            }
+
+            a{
+                text-decoration: $FooterATextDecoration;
+                color: $FooterAColor;
+            }
+
+        }
+    
+
+}
+
+
+
+/* PAGE MENU */ 
+
+    /* section menu */
+
+    header{
+        display: flex;
+
+        .conteneurflèche{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 10%;
+            
+            .fas{
+            font-size: 25px;
+            color: black;
+            }
+
+        }
+
+        .restaurant__headerconteneurlogo{
+            display: $HeaderConteneurLogoDisplay;
+            justify-content: $HeaderConteneurLogoJustifyContent;
+            padding-top : $HeaderConteneurLogoPaddingTop;
+            padding-bottom: $HeaderConteneurLogoPaddingBottom;
+            width: 90%;
+        
+            img {
+                width: $HeaderImgWidth;
+                margin-left: -50px;
+                
+                @media screen and (min-width :375px){
+                    max-width: 300px;
+                }
+            }
+
+        }
+        
+    }
+
+    .menu{     
+ 
+      .conteneurphoto_lapalette{
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+            background-size: cover;
+                   
+        }
+
+        .conteneurphoto_lanote{
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            background-image: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+            background-size: cover;
+                   
+        }
+
+        .conteneurphoto_alafrancaise{
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            background-image: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+            background-size: cover;
+                   
+        }
+
+        .conteneurphoto_ledelice{
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+            background-image: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+            background-size: cover;
+                   
+        }
+        
+      
+       
+
+        .carte{
+            background-color: $grisclair;
+            border-radius: 20px 20px 0 0 ;
+            margin-top: -50px;
+            
+            
+
+            .conteneurh1iconcoeur{
+                display: flex;
+                justify-content: center;
+
+                h1{
+                    font-family: $policeshrikhand;
+                    font-size: 26px;
+                }
+
+                .conteneuriconcoeur{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 37px;
+                    width: 50px;
+                                      
+
+                        .far{
+                            font-size: 24px;
+                            width: 50px;
+                            position: absolute;
+                            opacity: 1;
+                    
+                        }                        
+
+                        .fas{
+                            width: 50px;
+                            font-size: 20px;
+                            position: absolute;
+                            opacity: 0;
+                            color: $violet;
+                            background: linear-gradient(180deg, rgba(147,86,220,1) 20%, rgba(255,121,218,1) 80%);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent; 
+                        }
+
+                        &:active{
+                            .far{
+                                opacity: 0;                                    
+                            }
+                            
+                            .fas{
+                                opacity: 1;
+                                transition: 2s; 
+                            }               
+                        }
+
+                        @media screen and  (min-width: 1000px){
+                            &:hover{
+                                .far{
+                                    opacity: 0;                                    
+                                }
+                                
+                                .fas{
+                                    opacity: 1;
+                                    transition: 2s; 
+                                }               
+                            }  
+                        }
+
+
+                }
+            }
+
+            .partiedumenu{
+                
+                margin-bottom: 40px;
+
+                h2{
+                    font-size: 14px;
+                    margin-left: 10px;
+                    
+
+                   &::after {
+                    display: block;
+                    content: "";
+                    background-color: $vert;
+                    width: 35px;
+                    height: 3px;
+                    margin-top: 3px;
+                                                
+                    }
+                    
+                }                              
+
+                .choix{
+                    background-color: $blanc;
+                    border-radius: 20px;
+                    margin: 10px;
+                    box-shadow: $ombre;
+                    display: flex;
+                    height: auto;
+                    width: auto;
+                    padding-left: 15px;
+
+                    h3{
+                        margin: 0px;
+                        padding-top: 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .détail{
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        
+                        p{
+                            font-weight: normal;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;                           
+                        }
+                    }
+
+                    .bigconteneurprixcheck{
+                        display: flex;
+
+                        .conteneurprix{
+                            display: flex;
+                            align-items: flex-end;
+                                
+                            .prix{                   
+                                font-weight: bold;
+                                margin-right: 25px;                                                   
+                            }                       
+                            
+                        }
+    
+                        .conteneurcheck{
+                            background-color: $vert;
+                            width: 0px;                          
+                            display: flex;
+                            align-content: center;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            border-radius: 0 20px 20px 0;
+                            overflow: hidden;
+                            transition: 0.3s;
+                            
+                            
+                           .fas{                        
+                            color: white;
+                            font-size: 25px;
+                            width: 65px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            flex-wrap: nowrap;                           
+                            } 
+                         
+                        
+                        }                       
+
+
+                    }                   
+                    
+                    &:active .conteneurcheck {
+                        width: 55px;                                               
+                    }
+                     
+
+
+                    &:active .fas{
+                    animation: 1s 0s 1 both rotationcheck;
+                        @keyframes rotationcheck {
+                            from{
+                                transform: rotate(0deg);
+                            }
+                            to{
+                                transform: rotate(360deg);
+                            }
+                                
+                        } 
+                    } 
+                    
+                    @media screen and  (min-width: 1000px){
+
+                        &:hover .conteneurcheck {
+                            width: 55px;                                               
+                        }
+                         
+    
+    
+                        &:hover .fas{
+                            animation: 1s 0s 1 both rotationcheck;
+                                @keyframes rotationcheck {
+                                    from{
+                                        transform: rotate(0deg);
+                                    }
+                                    to{
+                                        transform: rotate(360deg);
+                                    }
+                                    
+                                } 
+                        }
+
+                    }
+                
+                
+                               
+                
+            }
+            .entrée{
+                animation: 2s 1s 1 both apparition
+            }
+            .plat{
+                animation: 2s 2s 1 both apparition
+            }
+            .dessert{
+                animation: 2s 3s 1 both apparition
+            }
+            @keyframes apparition {
+                from {
+                opacity: 0;
+                }
+                
+                to {
+                opacity:1;
+                }
+            }
+
+            
+        }
+        .conteneurboutoncommander{
+            display: flex;
+            justify-content: center;
+            
+            &:hover{
+                animation: 1s 0s 1 both eclaircissement
+            }
+
+            .boutoncouleurdegradee{                    
+                color: white;
+                border-radius: 40px;
+                font-size: 16px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 50px;
+                padding-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 50px;
+                background: rgb(255,121,218);
+                background: linear-gradient(180deg, rgba(255,121,218,1) 20%, rgba(147,86,220,1) 100%);
+                border: none;
+                box-shadow: $ombre;
+                transition: 2s;
+             
+               
+                &:hover{
+                background: linear-gradient(180deg, #ff79da94 20%, #9356dc9e 100%);
+                box-shadow: 1px 18px 15px -9px rgb(0, 0, 0.9);
+                }
+
+            }
+            
+        }  
+
+
+    }
+
+}
+
+
+@keyframes eclaircissement {
+    from {opacity: 1;} 
+    to {opacity: 0.7;}                    
+ }
+
+
+    
